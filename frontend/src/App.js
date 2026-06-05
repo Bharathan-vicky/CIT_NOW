@@ -21,6 +21,7 @@ import AccountProfile from './pages/dealer-admin/AccountProfile';
 import ChangePassword from './pages/dealer-admin/ChangePassword';
 import SupportPage from './pages/SupportPage';
 import ThemeSettings from './pages/config/ThemeSettings';
+import CitNowUpgrades from './pages/CitNowUpgrades';
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
             <Route element={<ProtectedRoute roles={["super_admin", "dealer_admin", "dealer_user", "branch_admin"]} />}>
               <Route path="/config" element={<Navigate to="/config/theme" replace />} />
               <Route path="/config/theme" element={<Layout><ThemeSettings /></Layout>} />
+              <Route path="/citnow-upgrades" element={<Layout><CitNowUpgrades /></Layout>} />
             </Route>
 
             <Route element={<ProtectedRoute roles={["super_admin"]} />}>

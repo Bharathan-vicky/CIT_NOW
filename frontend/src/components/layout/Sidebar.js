@@ -29,7 +29,8 @@ import {
   ContactSupport,
   VpnKey,
   ExitToApp,
-  Palette
+  Palette,
+  Timeline
 } from '@mui/icons-material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -54,6 +55,7 @@ const ROLE_ACCESS = {
     { text: 'Dashboard', path: '/super-admin/dashboard', icon: SpaceDashboard },
     { text: 'User Management', path: '/super-admin/users', icon: Group },
     { text: 'Dealer Network', path: '/super-admin/dealers', icon: Business },
+    { text: 'CitNow Upgrades', path: '/citnow-upgrades', icon: Timeline },
     { 
       text: 'Configuration', 
       path: '/config', 
@@ -79,6 +81,7 @@ const ROLE_ACCESS = {
     { text: 'Bulk Upload', path: '/dealer/bulk', icon: UploadFile },
     { text: 'Result', path: '/dealer/results', icon: Assessment },
     { text: 'Team Mgmt', path: '/dealer/users', icon: ManageAccounts },
+    { text: 'CitNow Upgrades', path: '/citnow-upgrades', icon: Timeline },
     { 
       text: 'Configuration', 
       path: '/config', 
@@ -104,6 +107,7 @@ const ROLE_ACCESS = {
     { text: 'Bulk Upload', path: '/dealer/bulk', icon: UploadFile },
     { text: 'Result', path: '/dealer/results', icon: Assessment },
     { text: 'Team Mgmt', path: '/dealer/users', icon: ManageAccounts },
+    { text: 'CitNow Upgrades', path: '/citnow-upgrades', icon: Timeline },
     { 
       text: 'Configuration', 
       path: '/config', 
@@ -128,6 +132,7 @@ const ROLE_ACCESS = {
     { text: 'New Analysis', path: '/dealer/new', icon: AddToQueue },
     { text: 'Bulk Upload', path: '/dealer/bulk', icon: UploadFile },
     { text: 'Result', path: '/dealer/results', icon: Assessment },
+    { text: 'CitNow Upgrades', path: '/citnow-upgrades', icon: Timeline },
     { 
       text: 'Configuration', 
       path: '/config', 

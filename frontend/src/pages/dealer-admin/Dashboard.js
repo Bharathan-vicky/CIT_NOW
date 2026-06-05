@@ -1203,23 +1203,21 @@ export default function DealerAdminDashboard() {
               grid: '#E8EDF5',
             };
             return (
-              <Grid container spacing={5} sx={{ mt: 1 }}>
+              <Grid container spacing={3} sx={{ mt: 1 }}>
 
                 {/* Chart 1: Quality Score Trend — Navy Blue */}
-                <Grid item xs={12} md={6}>
-                  <Card sx={{ background: '#fff', border: `1.5px solid ${CN.navyLight}`, borderRadius: 3, boxShadow: '0 4px 20px rgba(28,63,170,0.08)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <CardContent sx={{ flexGrow: 1, p: 4, pb: '32px !important' }}>
-                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          <Box sx={{ width: 5, height: 28, borderRadius: 2, bgcolor: CN.navy, mr: 1.5 }} />
-                          <Typography variant="h6" sx={{ color: CN.navy, fontWeight: 700 }}>Quality Score Trend</Typography>
-                        </Box>
-                        <Chip label={timeRange} size="small" sx={{ bgcolor: CN.navyLight, color: CN.navy, fontWeight: 700, textTransform: 'capitalize', border: `1px solid ${CN.navy}30` }} />
+                <Grid item xs={12} sm={6} sx={{ minWidth: 0, flexBasis: { xs: '100%', sm: 'calc(50% - 12px)' }, maxWidth: { xs: '100%', sm: 'calc(50% - 12px)' } }}>
+                  <Card sx={{ background: '#fff', border: `1.5px solid ${CN.navyLight}`, borderRadius: 3, boxShadow: '0 4px 20px rgba(28,63,170,0.08)', height: 430, width: '100%', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flexGrow: 1, p: 2.5, pb: '20px !important' }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1, position: 'relative', minHeight: 32 }}>
+                        <Box sx={{ width: 5, height: 28, borderRadius: 2, bgcolor: CN.navy, position: 'absolute', left: 0 }} />
+                        <Typography variant="h6" sx={{ color: CN.navy, fontWeight: 700, textAlign: 'center' }}>Quality Score Trend</Typography>
+                        <Chip label={timeRange} size="small" sx={{ position: 'absolute', right: 0, bgcolor: CN.navyLight, color: CN.navy, fontWeight: 700, textTransform: 'capitalize', border: `1px solid ${CN.navy}30` }} />
                       </Box>
-                      <Typography variant="body2" sx={{ color: THEME.textSecondary, mb: 2.5 }}>
+                      <Typography variant="body2" sx={{ color: THEME.textSecondary, mb: 2.5, textAlign: 'center' }}>
                         Daily average quality ratings for overall, video, and audio (out of 10)
                       </Typography>
-                      <Box sx={{ display: 'flex', gap: 3, mb: 2.5, alignItems: 'center', flexWrap: 'wrap' }}>
+                      <Box sx={{ display: 'flex', gap: 3, mb: 2.5, alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <Box>
                           <Typography variant="caption" sx={{ color: THEME.textTertiary, fontWeight: 600 }}>Overall Avg</Typography>
                           <Typography variant="h5" sx={{ color: CN.navy, fontWeight: 800, lineHeight: 1.2 }}>
@@ -1241,7 +1239,7 @@ export default function DealerAdminDashboard() {
                           </Typography>
                         </Box>
                       </Box>
-                      <ResponsiveContainer width="100%" height={240}>
+                      <ResponsiveContainer width="100%" height={200}>
                         <LineChart data={dashboardData.dailyPerformance} margin={{ top: 12, right: 24, left: -20, bottom: 12 }}>
                           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={CN.grid} />
                           <XAxis dataKey="name" stroke={THEME.textTertiary} fontSize={11} tickLine={false} axisLine={false} />
@@ -1261,20 +1259,18 @@ export default function DealerAdminDashboard() {
                 </Grid>
 
                 {/* Chart 2: Videos Uploaded Trend — Golden Yellow */}
-                <Grid item xs={12} md={6}>
-                  <Card sx={{ background: '#fff', border: `1.5px solid ${CN.goldLight}`, borderRadius: 3, boxShadow: '0 4px 20px rgba(245,184,0,0.10)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <CardContent sx={{ flexGrow: 1, p: 4, pb: '32px !important' }}>
-                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          <Box sx={{ width: 5, height: 28, borderRadius: 2, bgcolor: CN.gold, mr: 1.5 }} />
-                          <Typography variant="h6" sx={{ color: '#7A5A00', fontWeight: 700 }}>Videos Uploaded Trend</Typography>
-                        </Box>
-                        <Chip label={timeRange} size="small" sx={{ bgcolor: CN.goldLight, color: '#7A5A00', fontWeight: 700, textTransform: 'capitalize', border: `1px solid ${CN.gold}60` }} />
+                <Grid item xs={12} sm={6} sx={{ minWidth: 0, flexBasis: { xs: '100%', sm: 'calc(50% - 12px)' }, maxWidth: { xs: '100%', sm: 'calc(50% - 12px)' } }}>
+                  <Card sx={{ background: '#fff', border: `1.5px solid ${CN.goldLight}`, borderRadius: 3, boxShadow: '0 4px 20px rgba(245,184,0,0.10)', height: 430, width: '100%', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flexGrow: 1, p: 2.5, pb: '20px !important' }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1, position: 'relative', minHeight: 32 }}>
+                        <Box sx={{ width: 5, height: 28, borderRadius: 2, bgcolor: CN.gold, position: 'absolute', left: 0 }} />
+                        <Typography variant="h6" sx={{ color: '#7A5A00', fontWeight: 700, textAlign: 'center' }}>Videos Uploaded Trend</Typography>
+                        <Chip label={timeRange} size="small" sx={{ position: 'absolute', right: 0, bgcolor: CN.goldLight, color: '#7A5A00', fontWeight: 700, textTransform: 'capitalize', border: `1px solid ${CN.gold}60` }} />
                       </Box>
-                      <Typography variant="body2" sx={{ color: THEME.textSecondary, mb: 2.5 }}>
+                      <Typography variant="body2" sx={{ color: THEME.textSecondary, mb: 2.5, textAlign: 'center' }}>
                         Number of videos submitted for analysis per day
                       </Typography>
-                      <Box sx={{ display: 'flex', gap: 4, mb: 2.5, alignItems: 'center' }}>
+                      <Box sx={{ display: 'flex', gap: 4, mb: 2.5, alignItems: 'center', justifyContent: 'center' }}>
                         <Box>
                           <Typography variant="caption" sx={{ color: THEME.textTertiary, fontWeight: 600 }}>Total Videos</Typography>
                           <Typography variant="h5" sx={{ color: CN.gold, fontWeight: 800, lineHeight: 1.2 }}>
@@ -1289,7 +1285,7 @@ export default function DealerAdminDashboard() {
                           </Typography>
                         </Box>
                       </Box>
-                      <ResponsiveContainer width="100%" height={240}>
+                      <ResponsiveContainer width="100%" height={200}>
                         <RechartsBarChart data={dashboardData.dailyPerformance} margin={{ top: 12, right: 24, left: -20, bottom: 12 }} barSize={28}>
                           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={CN.grid} />
                           <XAxis dataKey="name" stroke={THEME.textTertiary} fontSize={11} tickLine={false} axisLine={false} />
@@ -1303,20 +1299,18 @@ export default function DealerAdminDashboard() {
                 </Grid>
 
                 {/* Chart 3: Advisor Performance Trend — Orange */}
-                <Grid item xs={12} md={6}>
-                  <Card sx={{ background: '#fff', border: `1.5px solid ${CN.orangeLight}`, borderRadius: 3, boxShadow: '0 4px 20px rgba(255,102,0,0.08)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <CardContent sx={{ flexGrow: 1, p: 4, pb: '32px !important' }}>
-                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          <Box sx={{ width: 5, height: 28, borderRadius: 2, bgcolor: CN.orange, mr: 1.5 }} />
-                          <Typography variant="h6" sx={{ color: '#7A2E00', fontWeight: 700 }}>Advisor Performance Trend</Typography>
-                        </Box>
-                        <Chip label="Top 6" size="small" sx={{ bgcolor: CN.orangeLight, color: '#7A2E00', fontWeight: 700, border: `1px solid ${CN.orange}50` }} />
+                <Grid item xs={12} sm={6} sx={{ minWidth: 0, flexBasis: { xs: '100%', sm: 'calc(50% - 12px)' }, maxWidth: { xs: '100%', sm: 'calc(50% - 12px)' } }}>
+                  <Card sx={{ background: '#fff', border: `1.5px solid ${CN.orangeLight}`, borderRadius: 3, boxShadow: '0 4px 20px rgba(255,102,0,0.08)', height: 430, width: '100%', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flexGrow: 1, p: 2.5, pb: '20px !important' }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1, position: 'relative', minHeight: 32 }}>
+                        <Box sx={{ width: 5, height: 28, borderRadius: 2, bgcolor: CN.orange, position: 'absolute', left: 0 }} />
+                        <Typography variant="h6" sx={{ color: '#7A2E00', fontWeight: 700, textAlign: 'center' }}>Advisor Performance Trend</Typography>
+                        <Chip label="Top 6" size="small" sx={{ position: 'absolute', right: 0, bgcolor: CN.orangeLight, color: '#7A2E00', fontWeight: 700, border: `1px solid ${CN.orange}50` }} />
                       </Box>
-                      <Typography variant="body2" sx={{ color: THEME.textSecondary, mb: 2.5 }}>
+                      <Typography variant="body2" sx={{ color: THEME.textSecondary, mb: 2.5, textAlign: 'center' }}>
                         Overall quality score per service advisor (top 6 by rank)
                       </Typography>
-                      <Box sx={{ display: 'flex', gap: 4, mb: 2.5, alignItems: 'center' }}>
+                      <Box sx={{ display: 'flex', gap: 4, mb: 2.5, alignItems: 'center', justifyContent: 'center' }}>
                         <Box>
                           <Typography variant="caption" sx={{ color: THEME.textTertiary, fontWeight: 600 }}>Advisors</Typography>
                           <Typography variant="h5" sx={{ color: CN.orange, fontWeight: 800, lineHeight: 1.2 }}>
@@ -1331,7 +1325,7 @@ export default function DealerAdminDashboard() {
                           </Typography>
                         </Box>
                       </Box>
-                      <ResponsiveContainer width="100%" height={240}>
+                      <ResponsiveContainer width="100%" height={200}>
                         <RechartsBarChart
                           data={dashboardData.serviceAdvisors.slice(0, 6).map(a => ({ name: a.name.split(',')[0].split(' ')[0], score: a.score }))}
                           margin={{ top: 12, right: 24, left: -20, bottom: 12 }}
@@ -1350,20 +1344,18 @@ export default function DealerAdminDashboard() {
                 </Grid>
 
                 {/* Chart 4: Audio vs Video — Navy + Gold (logo gradient pair) */}
-                <Grid item xs={12} md={6}>
-                  <Card sx={{ background: '#fff', border: `1.5px solid #EEF2FF`, borderRadius: 3, boxShadow: '0 4px 20px rgba(28,63,170,0.07)', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <CardContent sx={{ flexGrow: 1, p: 4, pb: '32px !important' }}>
-                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          <Box sx={{ width: 5, height: 28, borderRadius: 2, background: `linear-gradient(180deg, ${CN.gold} 0%, ${CN.orange} 100%)`, mr: 1.5 }} />
-                          <Typography variant="h6" sx={{ color: CN.navy, fontWeight: 700 }}>Audio / Video Improvement</Typography>
-                        </Box>
-                        <Chip label={timeRange} size="small" sx={{ bgcolor: CN.navyLight, color: CN.navy, fontWeight: 700, textTransform: 'capitalize', border: `1px solid ${CN.navy}30` }} />
+                <Grid item xs={12} sm={6} sx={{ minWidth: 0, flexBasis: { xs: '100%', sm: 'calc(50% - 12px)' }, maxWidth: { xs: '100%', sm: 'calc(50% - 12px)' } }}>
+                  <Card sx={{ background: '#fff', border: `1.5px solid #EEF2FF`, borderRadius: 3, boxShadow: '0 4px 20px rgba(28,63,170,0.07)', height: 430, width: '100%', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flexGrow: 1, p: 2.5, pb: '20px !important' }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1, position: 'relative', minHeight: 32 }}>
+                        <Box sx={{ width: 5, height: 28, borderRadius: 2, background: `linear-gradient(180deg, ${CN.gold} 0%, ${CN.orange} 100%)`, position: 'absolute', left: 0 }} />
+                        <Typography variant="h6" sx={{ color: CN.navy, fontWeight: 700, textAlign: 'center' }}>Audio / Video Improvement</Typography>
+                        <Chip label={timeRange} size="small" sx={{ position: 'absolute', right: 0, bgcolor: CN.navyLight, color: CN.navy, fontWeight: 700, textTransform: 'capitalize', border: `1px solid ${CN.navy}30` }} />
                       </Box>
-                      <Typography variant="body2" sx={{ color: THEME.textSecondary, mb: 2.5 }}>
+                      <Typography variant="body2" sx={{ color: THEME.textSecondary, mb: 2.5, textAlign: 'center' }}>
                         Compare audio quality vs video quality over each day
                       </Typography>
-                      <Box sx={{ display: 'flex', gap: 4, mb: 2.5, alignItems: 'center' }}>
+                      <Box sx={{ display: 'flex', gap: 4, mb: 2.5, alignItems: 'center', justifyContent: 'center' }}>
                         <Box>
                           <Typography variant="caption" sx={{ color: THEME.textTertiary, fontWeight: 600 }}>Avg Audio</Typography>
                           <Typography variant="h5" sx={{ color: CN.navy, fontWeight: 800, lineHeight: 1.2 }}>
@@ -1378,7 +1370,7 @@ export default function DealerAdminDashboard() {
                           </Typography>
                         </Box>
                       </Box>
-                      <ResponsiveContainer width="100%" height={240}>
+                      <ResponsiveContainer width="100%" height={200}>
                         <LineChart data={dashboardData.dailyPerformance} margin={{ top: 12, right: 24, left: -20, bottom: 12 }}>
                           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={CN.grid} />
                           <XAxis dataKey="name" stroke={THEME.textTertiary} fontSize={11} tickLine={false} axisLine={false} />
