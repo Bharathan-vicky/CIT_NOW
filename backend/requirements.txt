@@ -25,4 +25,4 @@ yt-dlp==2023.11.16
 beautifulsoup4==4.12.2
 requests==2.31.0
 aiofiles==23.2.1
-
+xlrd>=2.0.1
