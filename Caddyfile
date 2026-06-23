@@ -1,3 +1,14 @@
 qualitylensfocustech.duckdns.org {
-    reverse_proxy backend:8000
+    # Serve static frontend files
+    root * /srv/build
+    file_server
+
+    # Reverse proxy backend API endpoints to backend container
+    @api_paths {
+        path /token /users* /analyze* /my-analysis-tasks /bulk-analyze /bulk-status* /bulk-cancel* /bulk-job* /bulk-download* /bulk-excel-data* /results* /dashboard* /health /docs* /openapi.json
+    }
+    reverse_proxy @api_paths backend:8000
+
+    # Fallback to index.html for React router single-page routing
+    try_files {path} /index.html
 }
